@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Task1 = () => {
+const Task1 = (props) => {
     return (
-        <div>{props.size}</div>
+        <div>{props.color}</div>
     );
 };
 
