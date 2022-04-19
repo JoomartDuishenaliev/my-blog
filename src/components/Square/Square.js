@@ -1,15 +1,12 @@
 import React from 'react';
-import Task1 from "./Task1";
 
-const Square = () => {
-    return (
-        <>
-            <Task1
-                size={10}
-                color="black"
-            />
-        </>
-    );
+const Square = (props) => {
+    const styleDiv = {
+        backgroundColor:props.color,
+        height:props.size,
+        width:props.size
+    }
+    return <div style={styleDiv}/>;
 };
 
 export default Square;
