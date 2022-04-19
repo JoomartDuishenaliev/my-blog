@@ -4,7 +4,7 @@ import Square from "./components/Square/Square";
 const App = () => {
     return (
         <div>
-
+            <Square/>
         </div>
     )
 }

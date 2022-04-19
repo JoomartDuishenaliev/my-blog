@@ -1,9 +1,13 @@
 import React from 'react';
+import Task1 from "./Task1";
 
 const Square = () => {
     return (
         <>
-            <div>{props.size}</div>
+            <Task1
+                size={10}
+                color="black"
+            />
         </>
     );
 };
