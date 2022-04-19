@@ -20,8 +20,8 @@ const BlogEntry = (props) => {
                             </p>
                         </div>
                         <div className="w3-col m4 w3-hide-small">
-                            <p><span className="w3-padding-large w3-right"><b>{props.countComments} &nbsp;</b> <span
-                                className="w3-tag">0</span></span></p>
+                            <p><span className="w3-padding-large w3-right"><b>Comments &nbsp;</b> <span
+                                className="w3-tag">{props.countComments}</span></span></p>
                         </div>
                     </div>
                 </div>
