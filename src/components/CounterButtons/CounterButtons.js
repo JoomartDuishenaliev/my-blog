@@ -8,11 +8,11 @@ const CounterButtons = () => {
                 <h1>{count}</h1>
             </div>
             <div style={{display: "flex"}}>
-                <button onClick={() => setCount(count + 1)}
+                <button onClick={() => setCount(prevState => prevState + 1)}
                         style={{width: "75px", height: "40px", backgroundColor: "lime", marginRight:"40px"}}>
                     Increase
                 </button>
-                <button onClick={() => setCount(count - 1)}
+                <button onClick={() => setCount(prevState => prevState - 1)}
                         style={{width: "85px", height: "40px", backgroundColor: "yellow"}}>
                     Decrease
                 </button>
