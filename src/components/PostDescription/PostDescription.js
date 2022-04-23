@@ -2,7 +2,7 @@ import React from "react";
 
 const PostDescription = (props) => {
     return (
-        <div className="w3-col l12 s12 card">
+        <div className="w3-col l12 s12">
             <div className="w3-card-4 w3-margin w3-white">
                 <h1 className="title">{props.title}</h1>
                 <div className="mainFlex">
