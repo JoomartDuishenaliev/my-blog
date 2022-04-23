@@ -38,6 +38,10 @@
     padding: 25px 30px;
 }
 
+.img{
+    border-radius: 20px;
+}
+
 .line{
     height: 1px;
     background-color: darkgrey;
@@ -84,6 +88,7 @@
     background-color: coral;
     border: none;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .italicFont{
