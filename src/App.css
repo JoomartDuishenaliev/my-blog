@@ -94,3 +94,6 @@
 .largeFont{
     font-size: 25px;
 }
+
+input:focus {background-color: lightgrey}
+textarea:focus {background-color: lightgrey}

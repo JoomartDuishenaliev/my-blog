@@ -16,8 +16,8 @@ const PostDescription = (props) => {
                 <hr className="line"/>
                 <h4 className="leftMargin">Оставить комментарий*</h4>
                 <div className="commentFlex">
-                    <input className="commentWidth" type="text" placeholder="Введите ваше имя"/>
-                    <textarea className="commentWidth" placeholder="Внесите комментарий"/>
+                    <input className="input:focus commentWidth" type="text" placeholder="Введите ваше имя"/>
+                    <textarea className="textarea:focus commentWidth" placeholder="Внесите комментарий"/>
                     <button className="btn">Отправить</button>
                 </div>
                 <hr className="line"/>
