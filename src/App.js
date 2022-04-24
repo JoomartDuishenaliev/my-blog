@@ -7,11 +7,11 @@ import Main from "./components/Pages/Main/Main";
 const App = () => {
     return (
         <>
-            <Main/>
             <BrowserRouter>
-                <Link to="post"/>
+                <Main/>
+                <Link to="/post"/>
                 <Routes>
-                    <Route path="post" element={<Post/>}/>
+                    <Route path="/post" element={<Post/>}/>
                 </Routes>
             </BrowserRouter>
         </>
