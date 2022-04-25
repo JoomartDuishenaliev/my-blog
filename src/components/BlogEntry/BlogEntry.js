@@ -1,6 +1,5 @@
 import React from "react";
-import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
-import Post from "../Pages/Post/Post";
+import {Link} from "react-router-dom";
 
 const BlogEntry = (props) => {
     console.log(props);
@@ -17,10 +16,10 @@ const BlogEntry = (props) => {
                     <div className="w3-row">
                         <div className="w3-col m8 s12">
                             <p>
-                                <Link to="/post"/>
-                                <button className="w3-button w3-padding-large w3-white w3-border"><b>READ
-                                    MORE
-                                    »</b></button>
+                                <Link to="/post">
+                                    <button className="w3-button w3-padding-large w3-white w3-border"><b>READ MORE»</b>
+                                    </button>
+                                </Link>
                             </p>
                         </div>
                         <div className="w3-col m4 w3-hide-small">

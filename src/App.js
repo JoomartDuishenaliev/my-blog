@@ -1,20 +1,17 @@
 import React from "react";
-import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
+import Main from "./components/Pages/Main/Main";
 import Post from "./components/Pages/Post/Post";
 import "./App.css";
-import Main from "./components/Pages/Main/Main";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 const App = () => {
     return (
-        <>
-            <BrowserRouter>
-                <Main/>
-                <Link to="/post"/>
-                <Routes>
-                    <Route path="/post" element={<Post/>}/>
-                </Routes>
-            </BrowserRouter>
-        </>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Main/>}/>
+                <Route path="/post" element={<Post/>}/>
+            </Routes>
+        </BrowserRouter>
     )
 }
 
