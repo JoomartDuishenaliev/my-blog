@@ -2,7 +2,6 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 const BlogEntry = (props) => {
-    console.log(props);
     return (
         <>
             <div className="w3-card-4 w3-margin w3-white">
