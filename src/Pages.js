@@ -1,9 +1,7 @@
 import React from "react";
 import {Link, useParams} from "react-router-dom";
 
-export const CheckIfActive = () => {
-    return (object) => object.isActive ? "active-link" : "";
-}
+export const CheckIfActive = () => (object) => object.isActive ? "active-link" : "";
 
 export const Main = () => <h1 className="title">Главная страничка</h1>;
 
