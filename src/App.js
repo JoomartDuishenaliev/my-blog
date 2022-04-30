@@ -1,6 +1,6 @@
 import React from "react";
 import {Routes, Route, NavLink} from "react-router-dom";
-import {Main, About, Products, Contacts, Post, NotFound, CheckIfActive} from "./Pages";
+import {Main, About, Products, Contacts, Post, Posts, NotFound, CheckIfActive} from "./Pages";
 import "./App.css";
 
 const App = () => {
@@ -21,7 +21,7 @@ const App = () => {
                         <NavLink className={CheckIfActive()} to="/contacts">Контакты</NavLink>
                     </li>
                     <li>
-                        <NavLink className={CheckIfActive()} to="/post/165">Пост</NavLink>
+                        <NavLink className={CheckIfActive()} to="/posts">Посты</NavLink>
                     </li>
                 </ul>
             </nav>
@@ -30,6 +30,7 @@ const App = () => {
                 <Route path="/products" element={<Products/>}/>
                 <Route path="/about" element={<About/>}/>
                 <Route path="/contacts" element={<Contacts/>}/>
+                <Route path="/posts" element={<Posts/>}/>
                 <Route path="/post/:id" element={<Post/>}/>
                 <Route path="*" element={<NotFound/>}/>
             </Routes>
