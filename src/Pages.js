@@ -40,7 +40,7 @@ export const Posts = () => {
             <ul>
                 {
                     POSTS.map(item => {
-                        return <li><Link to={`/post/${item.id}`} key={item.id}>{item.title}</Link></li>
+                        return <li key={item.id}><Link to={`/post/${item.id}`}>{item.title}</Link></li>
                     })
                 }
             </ul>
