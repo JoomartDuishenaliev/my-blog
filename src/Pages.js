@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Link, useParams} from "react-router-dom";
+import {Link, useParams, useLocation, useNavigate} from "react-router-dom";
 import {POSTS} from "./constants";
 
 export const CheckIfActive = () => (object) => object.isActive ? "active-link" : "";
@@ -8,17 +8,50 @@ export const Main = () => <h1 className="title">Главная страничк�
 
 export const Products = () => <h1 className="title">Наши продукты</h1>;
 
-export const About = () => <h1 className="title">О нас</h1>;
+export const About = () => {
+    const navigate = useNavigate();
+    const goForward = () => {
+        navigate("/products");
+    }
+    return (
+        <>
+            <h1 className="title">О нас</h1>;
+            <button onClick={goForward}>Вперед</button>
+        </>
+    )
+}
 
-export const Contacts = () => <h1 className="title">Контакты</h1>;
+export const Contacts = () => {
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const goBack = () => {
+        navigate(-1);
+    }
+
+
+
+    return (
+        <>
+            <h1 className="title">Контакты</h1>
+            <button onClick={goBack}>Назад</button>
+
+        </>
+    )
+}
 
 export const Post = () => {
     const {id} = useParams();
     const [post, setPost] = useState({})
+    const navigate = useNavigate();
 
     const getPost = () => {
         const post = POSTS.find(item => item.id === parseInt(id));
-        setPost(post);
+        if(!post){
+            navigate('/');
+        } else {
+            setPost(post);
+        }
     }
 
     useEffect(() => {
@@ -32,6 +65,10 @@ export const Post = () => {
         </div>
     )
 }
+
+export const QA = () => <h1 className="title">Вопросы и ответы</h1>
+
+export const Feedback = () => <h1 className="title">Отзывы</h1>
 
 export const Posts = () => {
     return (
