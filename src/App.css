@@ -45,3 +45,45 @@ ul{
 .post p {
   font-size: 22px;
 }
+
+
+
+.dataBody{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dataCard{
+  width: 98%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dataContent{
+  width: 19%;
+  border: 3px outset #8d8ce9;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: #e2c5c4;
+  margin: 7px;
+  padding: 10px;
+}
+
+.dataSpacing1{
+  margin-bottom: 0;
+}
+
+.dataSpacing2{
+  margin-top: 0;
+}
+
+.dataFont{
+  font-style: italic;
+}
+
+.dataDecoration{
+  text-decoration: underline;
+}

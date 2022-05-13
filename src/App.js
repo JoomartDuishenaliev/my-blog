@@ -1,48 +1,13 @@
 import React from "react";
-import {Routes, Route, NavLink} from "react-router-dom";
-import {Main, About, Products, Contacts, Post, Posts, QA, Feedback, NotFound, CheckIfActive} from "./Pages";
+import {Routes, Route} from "react-router-dom";
+import Main from "./components/Pages/Main/Main";
 import "./App.css";
 
 const App = () => {
     return (
-        <>
-            <nav className="nav">
-                <ul>
-                    <li>
-                        <NavLink className={CheckIfActive()} to="/">Главная</NavLink>
-                    </li>
-                    <li>
-                        <NavLink className={CheckIfActive()} to="/products">Продукты</NavLink>
-                    </li>
-                    <li>
-                        <NavLink className={CheckIfActive()} to="/about">О нас</NavLink>
-                    </li>
-                    <li>
-                        <NavLink className={CheckIfActive()} to="/contacts">Контакты</NavLink>
-                    </li>
-                    <li>
-                        <NavLink className={CheckIfActive()} to="/qa">Вопросы и ответы</NavLink>
-                    </li>
-                    <li>
-                        <NavLink className={CheckIfActive()} to="/feedback">Отзывы</NavLink>
-                    </li>
-                    <li>
-                        <NavLink className={CheckIfActive()} to="/posts">Посты</NavLink>
-                    </li>
-                </ul>
-            </nav>
-            <Routes>
-                <Route path="/" element={<Main/>}/>
-                <Route path="/products" element={<Products/>}/>
-                <Route path="/about" element={<About/>}/>
-                <Route path="/contacts" element={<Contacts/>}/>
-                <Route path="/posts" element={<Posts/>}/>
-                <Route path="/post/:id" element={<Post/>}/>
-                <Route path="/qa" element={<QA/>}/>
-                <Route path="/feedback" element={<Feedback/>}/>
-                <Route path="*" element={<NotFound/>}/>
-            </Routes>
-        </>
+        <Routes>
+            <Route path="/" element={<Main/>}/>
+        </Routes>
     )
 }
 
