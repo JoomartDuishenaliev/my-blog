@@ -1,30 +1,36 @@
 import React, {useEffect, useState} from "react";
+import styles from "./Main.module.css";
+import UserCard from "../UserCard/UserCard";
 
 const Main = () => {
-    const [data, setData] = useState([]);
+    const [userData, setUserData] = useState([]);
 
-    useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(response => response.json())
-            .then((data) => setData(data))
-    }, [])
-    if(!data) return <span>loading...</span>
+    const FetchData = () => {
+        useEffect(() => {
+            const url = 'https://jsonplaceholder.typicode.com/users';
+            fetch(url)
+                .then((response) => response.json())
+                .then(data => setUserData(data));
+        }, [])
+    }
+
+    FetchData();
 
     return (
-        <div className="dataBody">
-            <h1>Users' data</h1>
-            <div className="dataCard">
-                {data.map((prop) => (
-                    <div className="dataContent" key={prop.id}>
-                        <h4 className="dataSpacing1">{prop.name}</h4>
-                        <p className="dataSpacing2">(nickname: '{prop.username}')</p>
-                        <span className="dataFont">Contact details:</span>
-                        <h6>phone: {prop.phone}</h6>
-                        <h6>email: {prop.email}</h6>
-                        <h6>Works at <span className="dataDecoration">{prop.company.name}</span></h6>
-                    </div>
-                ))}
-            </div>
+        <div className={styles.container}>
+            {
+                userData.map((item, index) => {
+                    return (
+                        <div key={index} className={styles.card}>
+                            <UserCard name={item.name}
+                                      username={item.username}
+                                      email={item.email}
+                                      phone={item.phone}
+                                      company={item.company.name}/>
+                        </div>
+                    )
+                })
+            }
         </div>
     )
 }
