@@ -4,9 +4,9 @@
     justify-content: center;
 }
 
-.card{
+.redCard, .blueCard, .greenCard{
     width: 32%;
-    background-color: azure;
+    background-color: crimson;
     padding: 10px;
     margin: 10px;
     border-radius: 15px;
@@ -15,16 +15,20 @@
     align-items: center;
 }
 
-.card p{
+.blueCard{
+    background-color: lightskyblue;
+}
+
+.greenCard{
+    background-color: limegreen;
+}
+
+.redCard p, .blueCard p, .greenCard p{
     text-align: center;
 }
 
 
-.card img{
+.redCard img, .blueCard img, .greenCard img{
     width: 330px;
     height: 100px;
-}
-
-.redBG{
-    background-color: red;
 }

@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import styles from "./Main.module.css";
-import {NavLink} from "react-router-dom";
 
 const Main = () => {
     const [albumPhoto, setAlbumPhoto] = useState([]);
@@ -15,25 +14,31 @@ const Main = () => {
     return (
         <div className={styles.container}>
             {
-                albumPhoto.map(photo => {
-                    return (
-                        <>
-                            {
-                                function changeStyle () {
-                                    if (photo.albumId === 1) {
-                                        return (
-                                            <div key={photo.id} className={styles.card}>
-                                                <p>{photo.title}</p>
-                                                <NavLink to={photo.url}><p>Photo link</p></NavLink>
-                                                <img src={photo.thumbnailUrl}></img>
-                                            </div>
-                                        )
-                                    }
-                                }
-                            }
-                        </>
-                    )
+                albumPhoto.map((elem) => {
+                    if (elem.albumId === 1){
+                        return (
+                            <div key={elem.id} className={styles.redCard}>
+                                <p>{elem.title}</p>
+                                <img src={elem.url}></img>
+                            </div>
+                        )
+                    } else if(elem.albumId === 2){
+                        return (
+                            <div key={elem.id} className={styles.blueCard}>
+                                <p>{elem.title}</p>
+                                <img src={elem.url}></img>
+                            </div>
+                        )
+                    } else if(elem.albumId === 3){
+                        return (
+                            <div key={elem.id} className={styles.greenCard}>
+                                <p>{elem.title}</p>
+                                <img src={elem.url}></img>
+                            </div>
+                        )
+                    }
                 })
+
             }
         </div>
     )
