@@ -1,33 +1,37 @@
 import React, {useEffect, useState} from "react";
 import styles from "./Main.module.css";
-import UserCard from "../UserCard/UserCard";
+import {NavLink} from "react-router-dom";
 
 const Main = () => {
-    const [userData, setUserData] = useState([]);
+    const [albumPhoto, setAlbumPhoto] = useState([]);
 
-    const FetchData = () => {
-        useEffect(() => {
-            const url = 'https://jsonplaceholder.typicode.com/users';
-            fetch(url)
-                .then((response) => response.json())
-                .then(data => setUserData(data));
-        }, [])
-    }
-
-    FetchData();
+    useEffect(() => {
+        const url = 'https://jsonplaceholder.typicode.com/photos';
+        fetch(url)
+            .then((response) => response.json())
+            .then(data => setAlbumPhoto(data));
+    }, [])
 
     return (
         <div className={styles.container}>
             {
-                userData.map((item, index) => {
+                albumPhoto.map(photo => {
                     return (
-                        <div key={index} className={styles.card}>
-                            <UserCard name={item.name}
-                                      username={item.username}
-                                      email={item.email}
-                                      phone={item.phone}
-                                      company={item.company.name}/>
-                        </div>
+                        <>
+                            {
+                                function changeStyle () {
+                                    if (photo.albumId === 1) {
+                                        return (
+                                            <div key={photo.id} className={styles.card}>
+                                                <p>{photo.title}</p>
+                                                <NavLink to={photo.url}><p>Photo link</p></NavLink>
+                                                <img src={photo.thumbnailUrl}></img>
+                                            </div>
+                                        )
+                                    }
+                                }
+                            }
+                        </>
                     )
                 })
             }
