@@ -1,6 +1,14 @@
 import React, {useEffect, useState} from "react";
 import styles from "./Main.module.css";
 
+const BGColor = {
+    1:styles.red,
+    2:styles.blue,
+    3:styles.pink,
+    4:styles.green,
+    5:styles.yellow
+}
+
 const Main = () => {
     const [albumPhoto, setAlbumPhoto] = useState([]);
 
@@ -14,31 +22,15 @@ const Main = () => {
     return (
         <div className={styles.container}>
             {
-                albumPhoto.map((elem) => {
-                    if (elem.albumId === 1){
-                        return (
-                            <div key={elem.id} className={styles.redCard}>
-                                <p>{elem.title}</p>
-                                <img src={elem.url}></img>
-                            </div>
-                        )
-                    } else if(elem.albumId === 2){
-                        return (
-                            <div key={elem.id} className={styles.blueCard}>
-                                <p>{elem.title}</p>
-                                <img src={elem.url}></img>
-                            </div>
-                        )
-                    } else if(elem.albumId === 3){
-                        return (
-                            <div key={elem.id} className={styles.greenCard}>
-                                <p>{elem.title}</p>
-                                <img src={elem.url}></img>
-                            </div>
-                        )
-                    }
-                })
+                albumPhoto.map((item, index) => {
 
+                    return (
+                        <div key={index} className={`${styles.card} ${BGColor[item.albumId]}`}>
+                            <p>{item.title}</p>
+                            <img src={item.url} alt=""/>
+                        </div>
+                    )
+                })
             }
         </div>
     )

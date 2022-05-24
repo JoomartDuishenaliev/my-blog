@@ -4,9 +4,9 @@
     justify-content: center;
 }
 
-.redCard, .blueCard, .greenCard{
-    width: 32%;
-    background-color: crimson;
+.card, .red, .blue, .pink, .green, .yellow{
+    width: 350px;
+    background-color: azure;
     padding: 10px;
     margin: 10px;
     border-radius: 15px;
@@ -15,20 +15,32 @@
     align-items: center;
 }
 
-.blueCard{
-    background-color: lightskyblue;
-}
-
-.greenCard{
-    background-color: limegreen;
-}
-
-.redCard p, .blueCard p, .greenCard p{
+.card p{
     text-align: center;
 }
 
+.card img, .red img, .blue img, .pink img, .green img, .yellow img{
+    width: 90%;
+    height: 150px;
+    border-radius: 10px;
+}
 
-.redCard img, .blueCard img, .greenCard img{
-    width: 330px;
-    height: 100px;
+.red{
+    background-color: crimson;
+}
+
+.blue{
+    background-color: lightskyblue;
+}
+
+.pink{
+    background-color: hotpink;
+}
+
+.green{
+    background-color: #09ff09;
+}
+
+.yellow{
+    background-color: yellow;
 }

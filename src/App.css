@@ -87,3 +87,22 @@ ul{
 .dataDecoration{
   text-decoration: underline;
 }
+
+.redCard, .blueCard, .greenCard{
+  width: 32%;
+  background-color: crimson;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.blueCard{
+  background-color: lightskyblue;
+}
+
+.greenCard{
+  background-color: limegreen;
+}

@@ -1,13 +1,11 @@
 import React from 'react';
+import styles from "../Main/Main.module.css";
 
 const UserCard = (props) => {
     return (
-        <div>
-            <p>{props.name}</p>
-            <p>{props.username}</p>
-            <p>{props.email}</p>
-            <p>{props.phone}</p>
-            <p>{props.company}</p>
+        <div key={props.id} className={styles.redCard}>
+            <p>{props.title}</p>
+            <img src={props.url}></img>
         </div>
     );
 };
